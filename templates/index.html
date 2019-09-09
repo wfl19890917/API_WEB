@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}
+    API自动化平台
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block main %}
+<style type="text/css">
+.box1,.box2,.box3,.box4{ width:200px; height:100px;float:left;margin:10px 200px;color:#FFFFFF;} 
+.box1{
+margin-left:400px;
+margin-top:100px;
+background:url(static/img/indexnew.png); 
+} 
+.box2{
+margin-top:100px;
+background:url(static/img/interface.png);} 
+.box3{
+margin-left:200px;
+background:url(static/img/yonglinew.png)} 
+.box4{
+background:url(static/img/projectnew.png)} 
+}   
+</style>
+<div class="box1">
+        <div style="text-align:center;">首页</div>
+                    <div style="float:left;margin:60px 0;">
+                    <a style="color:#FFFFFF;" href="{{ url_for('index')}}"> 查看更多</a></div>
+                    <div style="float:right;margin:50px 0;">
+                    <a href="{{ url_for('index')}}">
+                    <img src="static/img/jiantounew.png" height="30" width="30"></a></div>
+            </div>
+<div class="box2"> 
+                        <div style="text-align:center;">接口</div>
+                        <div style="float:left;margin:60px 0;">
+                    <a style="color:#FFFFFF;" href="{{ url_for('interface') }}"> 查看更多</a></div>
+            <div style="float:right;margin:50px 0;">
+                    <a href="{{ url_for('interface')}}">
+                    <img src="static/img/jiantounew.png" height="30" width="30"></a></div>
+            </div>
+<div class="box3"> 
+<div style="text-align:center;">用例</div>
+                        <div style="float:left;margin:60px 0;">
+                    <a style="color:#FFFFFF;" href="{{ url_for('yongli') }}"> 查看更多</a></div>
+            <div style="float:right;margin:50px 0;">
+                    <a href="{{ url_for('yongli')}}">
+                    <img src="static/img/jiantounew.png" height="30" width="30"></a></div>
+            </div>
+<div class="box4"> 
+<div style="text-align:center;">报告</div>
+                        <div style="float:left;margin:60px 0;">
+                    <a style="color:#FFFFFF;" href="#"> 查看更多</a></div>
+            <div style="float:right;margin:50px 0;">
+                    <a href="{{url_for('report')}}">
+                    <img src="static/img/jiantounew.png" height="30" width="30"></a></div>
+            </div>
+{% endblock %}

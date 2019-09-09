@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+    API自动化平台
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block main %}
+    <div class="tpl-content-wrapper" style="margin-top: -7px;">
+        <div class="tpl-content-page-title"></div>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title"></div>
+            <div style="height: 5px;">编辑用例</div>
+        <div style="margin-top: 24px">
+        {% for case in cases%}
+        <form action="{{url_for('edit_report_success',id=case.id)}}" method="POST">
+                <p>接口名称：<input id="name" name="intername" value="{{case.inter_name}}"></p>
+                <p>用例名称：<input id="project" name="casename" value="{{case.case_name}}"> </p>        
+                <p>接口url：<input id="url" name="url" value="{{case.url}}"></p>
+                <p>接口请求方法：<input id="meth" name="meth" value="{{case.method}}"></p>
+                <p>接口header：<input id="header" name="header" value="{{case.header}}"> </p>
+                <p>请求参数：<input id='data' name='data' value="{{case.data}}"></p>
+                <p>msg校验值：<input id="msg" name="msg" value="{{case.msg}}"></p>
+                <p>code校验值:<input id="code" name="code" value="{{case.code}}"></p>
+                <p>预期结果：<input id='expect' name="expect" value="{{case.expect}}"></p>
+               <p>状态:<input id="status" name="status" value="{{case.status}}"></p>
+               <p>实际结果:<input id="actual" name="actual" value="{{case.actual}}"></p>
+         <p><button type="submit" class="btn btn-default" id="submit-button">保存</button></p>
+          </form>
+          {% endfor %}
+        </div>
+    </div>
+    </div>
+{% endblock %}

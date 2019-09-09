@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    API自动化平台
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block main %}
+<div class="tpl-content-wrapper" style="margin-top: -7px;">
+                <div class="caption font-green bold"> <strong>执行用例</strong></div>
+           <form method="POST" action="{{url_for('operate_case_success')}}">
+                <p style="margin-top: 20px">
+                    选择要执行的接口名称:
+                    <select id="case" name="case">
+                        <option>---请选择接口名称---</option>
+                        {% for case in cases %}
+                            <option value="{{case.inter_name}}">
+                            {{case.inter_name}}
+                            </option>
+                            {% endfor %}
+                    </select>
+                </p>
+                <input type="submit" value="执行" class="btn btn-default">
+            </form>
+        </div>
+    </div>
+{% endblock %}

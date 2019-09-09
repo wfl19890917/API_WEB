@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    登录
+{% endblock  %}
+
+{% block head %}
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/10.31.css') }}">
+    <script src="{{ url_for('static',filename='js/10.31.js') }}"></script>
+{% endblock  %}
+
+{% block main %}
+<div class="box">
+    <div id="title"><h1 style="text-align: center;">API测试平台登录</h1></div>
+    <form action="{{ url_for('login') }}" method="post" style="width: 40%;margin-left: 30%;">
+    <div class="input-box" style="text-align: center;color: red">
+        账号：<input id="uname" type="text" name="username" placeholder="请输入用户名">
+    </div>
+    <div class="input-box" style="text-align: center;color: red">
+        密码：<input id="upass" type="password" name="password" placeholder="请输入密码">
+    </div>
+    <div id="error-box" style="text-align: center;color: red"><br></div>
+    <div class="input-box" style="text-align: center;">
+        <button type="submit" onclick="">登录</button>
+        <a href="{{ url_for('register') }}">注册</a>
+    </div>
+        </form>
+</div>
+
+{% endblock  %}

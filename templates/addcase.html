@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+    API自动化平台
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block main %}
+    <div class="tpl-content-wrapper" style="margin-top: -7px;">
+        <div class="tpl-content-page-title"></div>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title"></div>
+            <div style="height: 5px;">添加用例</div>
+        <div style="margin-top: 24px">
+        <form action="{{url_for('add_case_success')}}" method="POST">
+                <p>接口名称：<input id="name" name="intername" placeholder="请输入接口的名称"></p>
+                <p>用例名称：<input id="project" name="casename" placeholder="请输入用例的名称"> </p>        
+                <p>接口url：<input id="url" name="url" placeholder="请输入接口的url"></p>
+                <p>接口请求方法：<input id="meth" name="meth" placeholder="请输入接口的请求方法"></p>
+                <p>接口header：<input id="header" name="header" placeholder="请输入接口的headers"> </p>
+                <p>请求参数：<input id='data' name='data' placeholder="请输入接口请求的参数"></p>
+         <p>msg校验值：<input id="msg" name="msg" placeholder="请输入msg的校验值'"></p>
+         <p>code校验值:<input id="code" name="code" placeholder="请输入code的校验值'"></p>
+                <p>预期结果：<input id='expect' name="expect" placeholder="请输入预期结果"></p>
+               <p>状态:<input id="status" name="status" placeholder="请输入状态"></p>
+               <p>实际结果:<input id="actual" name="actual" placeholder="请输入实际结果"></p>
+         <p><button type="submit" class="btn btn-default" id="submit-button">添加</button></p>
+          </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}

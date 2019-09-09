@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    API自动化平台
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block main %}
+    <h1>上传接口</h1>
+    <div class="col-sm-8" style="margin-left: 250px;margin-right: 250px;">
+    <form action="{{url_for('daoru_inter')}}" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="上传">
+</form>
+    </div>
+{% endblock %}

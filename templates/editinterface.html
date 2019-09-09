@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+    API自动化平台
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block main %}
+    <div class="tpl-content-wrapper" style="margin-top: -7px;">
+        <div class="tpl-content-page-title"></div>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title"></div>
+            <div style="height: 5px;">编辑接口</div>
+        <div style="margin-top: 24px">
+        {% for inter in inters%}
+        <form action="{{url_for('edit_inter_success',id=inter.id)}}" method="POST">
+                <p>项目名称：<input id="project" name="project" value="{{inter.pro_name}}">   </p>   
+                <p>接口名称：<input id="name" name="intername" value="{{inter.inter_name}}"></p>
+                <p>接口url：<input id="url" name="url" value="{{inter.url}}"></p>
+                <p>接口请求方法：<input id="meth" name="meth" value="{{inter.method}}"></p>
+               <p> 接口header：<input id="header" name="header" value="{{inter.header}}"> </p>
+         <p><button type="submit" class="btn btn-default" id="submit-button">保存</button></p>
+          </form>
+          {% endfor %}
+        </div>
+    </div>
+    </div>
+{% endblock %}

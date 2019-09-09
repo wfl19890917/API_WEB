@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+    {% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/base.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{{ url_for('static',filename='js/base.js') }}"></script>
+    {% block head %}
+    {% endblock %}
+</head>
+<div>
+    <div class="navbar">
+        <nav class="navbar-top">
+            <li id="logo"><img id="logo" src="{{ url_for( 'static',filename='img/logo.jpg') }}"
+                               style="margin-top: 5px"
+                               width="50px" alt="logo"></li>
+            <li><a href="{{ url_for('index') }}">首页</a></li>
+            <li><a href="{{url_for('interface')}}">接口</a></li>
+            <li><a href="{{url_for('yongli')}}">用例</a></li>
+            <li><a href="{{url_for('report')}}">测试报告</a></li>
+                <li style="float:right"><a href="{{url_for('register')}}">注册</a></li>
+                <li style="float:right"><a href="{{url_for('login')}}">登录</a></li>
+        </nav>
+
+    </div>
+</div>
+{% block main %}
+{% endblock %}
+<body id="myBody"
+      style="background-image:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514262796588&di=5e3f8a1d6575940b6f0b04820c595f82&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F1%2F57a1488df006f.jpg')">
+<div class="footer">
+    <footer>
+        <div class="col-xs-12 col-sm-8">
+        </div>
+    </footer>
+</div>
+</body>
+</html>

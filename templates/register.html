@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register
+{% endblock  %}
+{% block head %}
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/10.31.css') }}">
+    <script src="{{ url_for('static',filename='js/register.js') }}"></script>
+
+{% endblock  %}
+
+{% block main %}
+<div class="box">
+    <div id="title">API自动化平台</div>
+    <h3>注册</h3>
+    <form action="{{ url_for('register') }}" method="post">
+    <div class="input-box">
+        账号：<input id="uname" type="text"placeholder="请输入用户名" name="username" >
+    </div>
+    <div class="input-box">
+        密码：<input id="upass" type="password"   placeholder="请输入密码"name="password">
+    </div>
+    <div class="input-box">
+        验证：<input id="upass1" type="password" placeholder="请确认密码" name="password1">
+    </div>
+    <div id="error-box"><br></div>
+    <div class="input-box">
+        <button onclick="">注册</button>
+        <a href="{{ url_for('login') }}">已注册</a>
+    </div>
+    </form>
+</div>
+
+{% endblock  %}
